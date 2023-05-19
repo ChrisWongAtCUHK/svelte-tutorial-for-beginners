@@ -48,3 +48,4 @@ export default writable(0)
 
 # [Svelte Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO)
 * [Svelte Tutorial for Beginners #19 - Header & Footer Components](https://www.youtube.com/watch?v=xwiER0u9YS0)
+* [Svelte Tutorial for Beginners #20 - Reusable Tabs Component](https://www.youtube.com/watch?v=U8cM_jhmDxA)

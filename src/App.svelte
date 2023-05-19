@@ -1,13 +1,24 @@
 <script>
   import Header from './components/Header.svelte';
   import Footer from './components/Footer.svelte';
+  import Tabs from './shared/Tabs.svelte';
+
+  let items = ['Current Polls', 'Add New Poll'];
+  let activeItem = items[0];
+
+  const tabChange = (e) => {
+    activeItem = e.detail;
+  };
 </script>
 
 <Header/>
 <main>
-  <p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-  </p>
+  <Tabs {items} {activeItem} on:tabChange={tabChange}/>
+  {#if activeItem === items[0]}
+    <p>Poll list component goes here</p>
+  {:else if activeItem === items[1]}
+    <p>new poll component goes here</p>
+  {/if}
 </main>
 <Footer/>
 
