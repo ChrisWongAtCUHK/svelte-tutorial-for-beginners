@@ -19,7 +19,7 @@
     <label for="answer-b">Answer B:</label>
     <input type="text" id="answer-b" bind:value={fields.answerB}/>
   </div>
-  <Button>Add Poll</Button>
+  <Button type="secondary" flat={true} inverse={true}>Add Poll</Button>
 </form>
 <style>
   form {

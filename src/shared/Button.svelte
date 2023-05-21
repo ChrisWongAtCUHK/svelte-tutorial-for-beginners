@@ -1,8 +1,10 @@
 <script>
   export let type = 'primary';
+  export let flat = false;
+  export let inverse = false;
 </script>
 
-<button class={type}>
+<button class={type} class:flat={flat} class:inverse={inverse}>
   <slot></slot>
 </button>
 
@@ -24,5 +26,15 @@
   .secondary {
     background: #45c496;
     color: white;
+  }
+
+  .primary.inverse {
+    background: white;
+    color: #d91b42;
+  }
+
+  .secondary.inverse {
+    background: white;
+    color: #45c496;
   }
 </style>
