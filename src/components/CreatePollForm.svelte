@@ -1,8 +1,11 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import Button from '../shared/Button.svelte';
+  
   let fields = { question: '', answerA: '', answerB: ''};
   let errors = { question: '', answerA: '', answerB: ''};
   let valid = false;
+  const dispatch = createEventDispatcher();
 
   const onSubmit = () => {
     valid = true;
@@ -29,6 +32,12 @@
       errors.answerB = 'Answer B cannot be empty';
     } else {
       errors.answerB = '';
+    }
+
+    // add new poll
+    if(valid) {
+      let poll = {...fields, votesA: 0, votesB: 0, id: Math.random()};
+      dispatch('add', poll);
     }
   };
 </script>
