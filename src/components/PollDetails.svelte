@@ -57,4 +57,20 @@
     display: inline-block;
     padding: 10px 20px;
   }
+
+  .percent {
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+  }
+
+  .percent-a {
+    width: 25%;
+    background: rgba(217, 27, 66, 0.2);
+  }
+
+  .percent-b {
+    width: 75%;
+    background: rgba(69, 196, 150, 0.2);
+  }
 </style>
