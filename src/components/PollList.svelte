@@ -9,7 +9,7 @@
 </script>
 
 <div class="poll-list">
-  {#each polls as poll(poll.id)}
+  {#each $PollStore as poll(poll.id)}
     <PollDetails {poll} on:vote/>
   {/each}
 </div>
