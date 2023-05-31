@@ -11,24 +11,9 @@
   const tabChange = (e) => {
     activeItem = e.detail;
   };
-
-  let polls = [];
-
+  
   const addPoll = (e) => {
-    const poll = e.detail;
-    polls = [poll, ...polls];
-    console.log(polls);
     activeItem = items[0];
-  };
-
-  const handleVote = (e) => {
-    const {option, id} = e.detail;
-    
-    let copiedPolls = [...polls];
-    let upvotedPoll = copiedPolls.find(poll => poll.id == id);
-
-    upvotedPoll[option]++
-    polls = copiedPolls;
   };
 </script>
 
@@ -36,7 +21,7 @@
 <main>
   <Tabs {items} {activeItem} on:tabChange={tabChange}/>
   {#if activeItem === items[0]}
-    <PollList on:vote={handleVote}/>
+    <PollList/>
   {:else if activeItem === items[1]}
     <CreatePollForm on:add={addPoll}/>
   {/if}
